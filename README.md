@@ -1,4 +1,9 @@
-📖 ## Overview ##
+# 📘 Overview
+
+This guide explains how to install, configure, and run Ansible for managing remote Linux servers.
+
+### 📁 Directory Structure
+```
 ansible-setup/
 ├── ansible.cfg
 ├── inventory.ini
@@ -6,8 +11,8 @@ ansible-setup/
 └── playbooks/
     └── sample-playbook.yml
 This guide explains how to install, configure, and run Ansible for managing remote Linux servers.
-
-You will learn:
+```
+### You will learn:
 
 How to install Ansible
 
