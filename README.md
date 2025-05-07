@@ -89,21 +89,29 @@ ansible devgroup -b -a "apt update -y"
 
 6. Example: Full Ad-Hoc Command Flow
 Ping:
+```
 ansible devgroup -u ubuntu -m ping
+```
 Create a file:
+```
 ansible devgroup -u ubuntu -a "touch /tmp/ansible.txt"
+```
 Update system packages:
+```
 ansible devgroup -u ubuntu -b -a "apt update -y"
-
+```
 6️⃣ ansible.cfg Setup
 To avoid repeatedly typing -i inventory.ini or -u ubuntu, create an ansible.cfg file:
+```
 [defaults]
 inventory = ./inventory.ini
 remote_user = ubuntu
 host_key_checking = False
+```
 ✅ Now you can run simpler commands like:
+```
 ansible devgroup -m ping
-
+```
 
 7️⃣ Example Playbook
 You can automate multiple tasks using playbooks.
@@ -132,14 +140,17 @@ Create a file: playbooks/sample-playbook.yml
         enabled: yes
 ```
 Run the Playbook:
+```
 ansible-playbook playbooks/sample-playbook.yml
+```
 ✅ This will install and start Nginx on all servers in devgroup.
 
 
 ## Useful Ansible Commands Summary ##
-
+```
 Task	Command
 Ping all servers	ansible devgroup -m ping
 Create a file	ansible devgroup -a "touch /tmp/hello.txt"
 Update packages (sudo)	ansible devgroup -b -a "apt update -y"
 Run a playbook	ansible-playbook playbooks/sample-playbook.yml
+```
