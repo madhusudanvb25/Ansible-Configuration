@@ -1,0 +1,31 @@
+---
+# Ansible Playbook: Demonstrating Loops in Ansible
+
+- name: Install packages using loop (without variables)
+  hosts: all
+  become: true
+  tasks:
+    - name: Install multiple packages without using variables
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - git
+        - docker.io
+        - apache2
+        - vim
+
+- name: Install packages using loop (with variables)
+  hosts: all
+  become: true
+  vars:
+    packages_to_install:
+      - curl
+      - wget
+      - net-tools
+  tasks:
+    - name: Install multiple packages using a variable
+      ansible.builtin.package:
+        name: "{{ item }}"
+        state: present
+      loop: "{{ packages_to_install }}"
