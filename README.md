@@ -8,8 +8,11 @@ ansible-setup/
 ├── ansible.cfg
 ├── inventory.ini
 ├── README.md
+├── ROLES.md
+├── ansible-vault-guide.md
 └── playbooks/
     └── sample-playbook.yml
+    └── loop-examples.yml
 This guide explains how to install, configure, and run Ansible for managing remote Linux servers.
 ```
 ### You will learn:
